@@ -167,12 +167,6 @@ export const getSingleShippingInfoApi = (id) =>
 export const updateShippingInfoApi = (id, formData) =>
   Api.put(`/api/user/updateShippingInfo/${id}`, formData, config);
 
-// Shopping Bag
-// export const addToShoppingBagApi = (data) => Api.post('/api/shoppingBag/addToShoppingBag', data, config)
-// export const getShoppingBagByUserIDApi = (id) => Api.get(`/api/shoppingBag/getShoppingBagByUserID/${id}`, config)
-// export const getSingleShoppingBagApi = (id) => Api.get(`/api/shoppingBag/getSingleShoppingBag/${id}`)
-// export const updateShoppingBagApi = (id, formData) => Api.put(`/api/shoppingBag/updateShoppingBag/${id}`, formData, config)
-// export const removeFromShoppingBagApi = (id) => Api.delete(`/api/shoppingBag/removeFromShoppingBag/${id}`, config)
 
 
 // order
