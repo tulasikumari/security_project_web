@@ -223,6 +223,14 @@ export const getAuditLogs = async () => {
   }
 };
 
+// export const addToCartApis = (cartData) => Api.post(`/api/cart/add_to_cart`, cartData, config);
+//   export const removeFromCartApi = (id) => Api.delete(`/api/cart/deleteCart/${id}`, config);
+// export const getCartApi = (userId) => Api.get(`/api/cart/getcart/${userId}`, config);
+// export const checkoutCartApi = (userId) => Api.post(`/api/cart/checkout/${userId}`, config);
+// export const updateCartQuantityApi = (cartData) => Api.put(`/api/cart/updateCartQuantity`, cartData, config);
+// // export const clearCartApi = (userId) => Api.delete(`/api/cart/clearCart/${userId}`, config);
+
+
 // export const logoutApi = () => {
 //   return Api.post('/api/user/logout', {}, { withCredentials: true });
 // };
