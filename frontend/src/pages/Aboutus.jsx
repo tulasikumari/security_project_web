@@ -215,6 +215,17 @@ const AboutUs = () => {
               margin: 10px 0;
             }
           }
+            @media (max-width: 600px) {
+            .container, .content-container {
+              flex-direction: column;
+              padding: 0 5%;
+            }
+
+            .team-member, .service {
+              width: 200%;
+              margin: 10px 0;
+            }
+          }
         `}
       </style>
       <Navbar />
