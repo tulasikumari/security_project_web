@@ -1,0 +1,56 @@
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getOrderByUserIDApi } from '../../apis/Api';
+import { toast } from 'react-toastify';
+
+const MyOrders = () => {
+    const { id } = useParams(); // Assuming you're using React Router to get user ID
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        // Fetch orders by user ID
+        getOrderByUserIDApi(id)
+            .then((res) => {
+                console.log("API Response:", res.data);
+                setOrders(res.data.orders); // Assuming API response has an array of orders
+            })
+            .catch(err => {
+                toast.error("Failed to fetch orders.");
+                console.error(err);
+            });
+    }, [id]);
+
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.toLocaleDateString();
+    };
+
+    return (
+        <div className="container mx-auto mt-8">
+            <h1 className="text-2xl font-bold mb-4">My Orders</h1>
+            {orders.length === 0 ? (
+                <p>No orders found.</p>
+            ) : (
+                <div className="grid grid-cols-1 gap-4">
+                    {orders.map(order => (
+                        <div key={order._id} className="bg-white p-4 rounded shadow-sm">
+                            <p className="text-lg font-semibold mb-2">Order ID: {order._id}</p>
+                            <p>Status: {order.orderStatus}</p>
+                            <p>Total Price: NPR. {order.totalPayment}</p>
+                            <p>Created At: {formatDate(order.createdAt)}</p>
+                            <ul className="mt-2">
+                                {order.shoppingItemList.map(item => (
+                                    <li key={item._id}>
+                                        <p>{item.productName} - NPR. {item.totalPrice}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default MyOrders;
