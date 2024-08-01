@@ -1,0 +1,19 @@
+.feature-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adjust the gap between feature items */
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+}
+
+.feature-item img {
+  width: 100px; /* Adjust the width of the images */
+  height: auto;
+}
+
+.feature-details {
+  margin-left: 20px; /* Adjust the spacing between the image and text */
+}
