@@ -1,0 +1,21 @@
+/* AdminDashboard.css */
+
+.button-group {
+  display: flex;
+  gap: 10px;  /* Adjust the gap as needed */
+}
+
+/* Style the buttons */
+.btn-danger,
+.btn-primary {
+  background-color: teal;
+  color: white;
+  border: 1px solid teal;
+}
+
+/* Hover effect */
+.btn-danger:hover,
+.btn-primary:hover {
+  background-color: black;
+  border: 1px solid black;
+}
